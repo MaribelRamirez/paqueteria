@@ -1,0 +1,7 @@
+<% flash.each do |name, msg| %>
+  <% if msg.instance_of?(Array) %>
+    <%= render :partial => "flash/messages", :locals => { :msg_title => msg.first, :msg => msg[1..-1], :class_name => flash_class(name) } %>
+  <% else %>
+    <%= render :partial => "flash/messages", :locals => { :msg => msg, :class_name => flash_class(name) } %>
+  <% end %>
+<% end %>

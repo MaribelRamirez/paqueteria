@@ -1,0 +1,18 @@
+<div class="content_table_simple">
+  <% unless mensaje.blank? %>
+    <table class="table_tipoB">
+      <thead>
+      <tr>
+        <th>Información !</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><%= mensaje %></td>
+      </tr>
+      </tbody>
+    </table>
+    <%= link_to 'Regresar', principal_index_path, :class => "btn btn-danger"  %>
+    <br/>
+  <% end %>
+</div>

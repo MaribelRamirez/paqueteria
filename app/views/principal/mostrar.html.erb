@@ -1,0 +1,76 @@
+<div class="col-lg-12 col-sm-12 ">
+  <%= link_to(:action => :index, class: 'btn btn-principal') do %>
+    <i class="icon-edit"></i><span>Regresar</span>
+  <% end %>
+  <table class="table  table-bordered table-hover">
+    <thead class="">
+    <tr>
+      <th scope="col">NOMBRE DE LA PAQUETERÍA</th>
+      <th scope="col">NÚMERO DE GUÍA</th>
+      <th scope="col">STATUS</th>
+      <th scope="col">DESCRIPCIÓN</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% unless @result.blank? %>
+      <% @result.each do |envio| %>
+        <tr>
+          <td>
+            <%= envio[:nombre]%>
+          </td>
+          <td>
+            <%= envio[:tracking_number]%>
+          </td>
+          <td>
+            <%= envio[:status]%>
+          </td>
+          <td>
+            <%= envio[:description]%>
+          </td>
+        </tr>
+      <% end %>
+    <% else %>
+      <tr>
+              <td colspan="<%= @result.size + 4 %>" class="text-center">No existen registros.</td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <% unless @result.blank? %>
+    Mostrando <b><%= @result.size %> resultados</b>
+  <% else %>
+    Mostrando <b>0 </b>resultados
+  <% end %>
+
+</div>
+  <style>
+    body {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    h3 {
+      margin-top: 2rem;
+    }
+
+    .row {
+      margin-bottom: 1rem;
+    }
+    .row .row {
+      margin-top: 1rem;
+      margin-bottom: 0;
+    }
+    [class*="x"] {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      background-color:#c3e6cb;
+      border: 1px solid #004085;
+    }
+    td,th{border: 2px solid #0f6674;}
+
+    th{ background-color:#b3d7ff}
+    hr {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+  </style>

@@ -1,0 +1,29 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  encoding: unicode
+
+development:
+  <<: *default
+  host: localhost
+  port: 5432
+  database: challenge
+  username: challenge
+  password: challenge
+
+test:
+  <<: *default
+  host: localhost
+  port: 5432
+  database: challenge
+  username: challenge
+  password: challenge
+
+production:
+  <<: *default
+  host: localhost
+  port: 5432
+  database: challenge
+  username: challenge
+  password: challenge

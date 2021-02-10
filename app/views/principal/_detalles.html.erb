@@ -1,0 +1,38 @@
+<h4 class="modal-title text-center">ENVIOS BUSCADOS</h4>
+  <div class="col-lg-12 col-sm-12">
+    <table class="table   table-hover">
+      <thead class="">
+      <tr>
+        <th scope="col">NOMBRE DE LA PAQUETERÍA</th>
+        <th scope="col">NÚMERO DE GUÍA</th>
+        <th scope="col">STATUS</th>
+        <th scope="col">DESCRIPCIÓN</th>
+      </tr>
+      </thead>
+      <tbody>
+        <% @result.each do |envio| %>
+          <tr>
+            <td>
+              <%= envio[:name]%>
+            </td>
+            <td>
+              <%= envio[:guide_number].to_s%>
+            </td>
+            <td>
+              <%= envio[:status]%>
+            </td>
+            <td>
+              <%= envio[:description]%>
+            </td>
+          </tr>
+        </tbody>
+          <%end%>
+      </table>
+    <% unless @result.blank? %>
+      Mostrando <b><%= @result.size %> resultados</b>
+    <% else %>
+      Mostrando <b>0 </b>resultados
+    <% end %>
+    </div>
+  </div>
+</div>
